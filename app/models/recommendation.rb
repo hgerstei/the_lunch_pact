@@ -5,4 +5,6 @@ class Recommendation < ApplicationRecord
 
   # Validations
 
+  validates :state_id, :presence => true
+
 end
