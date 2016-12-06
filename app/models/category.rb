@@ -9,6 +9,10 @@ class Category < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :purchases,
+             :source => :user
+
   # Validations
 
   validates :lifespan, :presence => true
