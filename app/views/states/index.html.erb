@@ -19,7 +19,13 @@
 
       <% @states.each do |state| %>
       <tr>
-        <td><%= state.category.type %></td>
+        <td>
+          <% if state.category.present? %>
+            <a href="/categories/<%= state.category.id %>">
+              <%= state.category.type %>
+            </a>
+          <% end %>
+        </td>
         <td><%= state.stage1 %></td>
         <td><%= state.stage2 %></td>
         <td><%= state.stage3 %></td>
