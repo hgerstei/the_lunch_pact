@@ -5,6 +5,8 @@ class State < ApplicationRecord
 
   # Validations
 
+  validates :category_id, :presence => true
+
   validates :stage1, :presence => true
 
   validates :stage2, :presence => true
