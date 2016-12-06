@@ -1,6 +1,8 @@
 class State < ApplicationRecord
   # Direct associations
 
+  has_many   :recipes
+
   has_many   :recommendations,
              :dependent => :destroy
 
