@@ -5,6 +5,8 @@ class Category < ApplicationRecord
 
   # Validations
 
+  validates :storage_suggestions, :presence => true
+
   validates :type, :uniqueness => true
 
   validates :type, :presence => true
