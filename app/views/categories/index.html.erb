@@ -9,8 +9,8 @@
       <p class="lead">Narrow results:</p>
 
         <div class="form-group">
-    <%= f.label :type_cont, "Type contains" %>
-    <%= f.text_field :type_cont, :class => "form-control", :placeholder => "Type contains" %>
+    <%= f.label :category_cont, "Category contains" %>
+    <%= f.text_field :category_cont, :class => "form-control", :placeholder => "Category contains" %>
   </div>
 
 <div class="form-group">
@@ -129,18 +129,18 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Type</th>
-        <th>Sub categories</th>
+        <th>Category</th>
+        <th>Sub-categories</th>
         <th>Photo url</th>
-        <th>Lifespan</th>
-        <th>Refrigeration</th>
-        <th>Storage suggestions</th>
+        <th>Lifespan (Days)</th>
+        <th>Refrigerate?</th>
+        <th>Storage Suggestions</th>
         <th>Actions</th>
       </tr>
 
       <% @categories.each do |category| %>
       <tr>
-        <td><%= category.type %></td>
+        <td><%= category.category %></td>
         <td><%= category.sub_categories %></td>
         <td><%= category.photo_url %></td>
         <td><%= category.lifespan %></td>

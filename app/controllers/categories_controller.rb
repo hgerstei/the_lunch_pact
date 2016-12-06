@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new
 
-    @category.type = params[:type]
+    @category.category = params[:category]
     @category.sub_categories = params[:sub_categories]
     @category.photo_url = params[:photo_url]
     @category.lifespan = params[:lifespan]
@@ -55,7 +55,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
 
-    @category.type = params[:type]
+    @category.category = params[:category]
     @category.sub_categories = params[:sub_categories]
     @category.photo_url = params[:photo_url]
     @category.lifespan = params[:lifespan]

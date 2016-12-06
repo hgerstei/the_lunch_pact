@@ -31,8 +31,8 @@ class Category < ApplicationRecord
 
   validates :storage_suggestions, :presence => true
 
-  validates :type, :uniqueness => true
+  validates :category, :uniqueness => true
 
-  validates :type, :presence => true
+  validates :category, :presence => true
 
 end
