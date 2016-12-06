@@ -5,4 +5,6 @@ class Category < ApplicationRecord
 
   # Validations
 
+  validates :type, :presence => true
+
 end
