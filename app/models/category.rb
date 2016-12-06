@@ -9,6 +9,10 @@ class Category < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :recommendations,
+             :through => :states,
+             :source => :recommendations
+
   has_many   :users,
              :through => :purchases,
              :source => :user
