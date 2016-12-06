@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "categories#index"
   # Routes for the Recipe resource:
   # CREATE
   get "/recipes/new", :controller => "recipes", :action => "new"
