@@ -5,6 +5,8 @@ class Purchase < ApplicationRecord
 
   # Validations
 
+  validates :purchase_date, :presence => true
+
   validates :purchase_name, :uniqueness => { :scope => [:category_id, :purchase_date] }
 
   validates :purchase_name, :presence => true
