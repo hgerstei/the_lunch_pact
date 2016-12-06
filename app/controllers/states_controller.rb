@@ -6,6 +6,8 @@ class StatesController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.new
+    @recommendation = Recommendation.new
     @state = State.find(params[:id])
 
     render("states/show.html.erb")
