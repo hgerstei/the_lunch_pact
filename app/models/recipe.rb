@@ -5,6 +5,8 @@ class Recipe < ApplicationRecord
 
   # Validations
 
+  validates :recipe_name, :uniqueness => true
+
   validates :recipe_name, :presence => true
 
   validates :recipe_url, :presence => true
