@@ -5,6 +5,8 @@ class Category < ApplicationRecord
 
   # Validations
 
+  validates :photo_url, :presence => true
+
   validates :refrigeration, :presence => true
 
   validates :storage_suggestions, :presence => true
