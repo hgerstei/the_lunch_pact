@@ -17,7 +17,7 @@
         <th>Actions</th>
       </tr>
 
-      <% @purchases.each do |purchase| %>
+      <% Purchase.all.to_ary.each do |purchase| %>
       <tr>
         <td><%= purchase.purchase_name %></td>
         <td>
@@ -41,6 +41,5 @@
       </tr>
       <% end %>
     </table>
-    <%= paginate @purchases, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>
