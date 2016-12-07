@@ -27,8 +27,6 @@ class Category < ApplicationRecord
 
   validates :photo_url, :presence => true
 
-  validates :refrigeration, :presence => true
-
   validates :storage_suggestions, :presence => true
 
   validates :category, :uniqueness => true
