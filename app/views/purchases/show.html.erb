@@ -35,11 +35,11 @@
     </dl>
 
     <div class="btn-group btn-group-justified">
-      <a href="/purchases" class="btn btn-primary">
+      <a href="/purchases" class="btn btn-success">
         Back
       </a>
       <% if current_user == @purchase.user %>
-        <a href="/purchases/<%= @purchase.id %>/edit" class="btn btn-warning">
+        <a href="/purchases/<%= @purchase.id %>/edit" class="btn btn-info">
           Edit
         </a>
         <a href="/delete_purchase/<%= @purchase.id %>" class="btn btn-danger" rel="nofollow">
