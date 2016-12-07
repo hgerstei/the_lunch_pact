@@ -1,36 +1,36 @@
 <div class="page-header">
-  <h3>Purchase #<%= @purchase.id %></h3>
+  <h3><%= @purchase.purchase_name %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Purchase name</dt>
+      <dt>Item</dt>
       <dd><%= @purchase.purchase_name %></dd>
 
       <dt>Category</dt>
       <dd>
         <% if @purchase.category.present? %>
           <a href="/categories/<%= @purchase.category_id %>">
-            <%= @purchase.category.type %>
+            <%= @purchase.category.category.capitalize %>
           </a>
         <% end %>
       </dd>
 
-      <dt>Purchase date</dt>
+      <dt>Purchase Date</dt>
       <dd><%= @purchase.purchase_date %></dd>
 
       <dt>Notes</dt>
       <dd><%= @purchase.notes %></dd>
 
-      <dt>User</dt>
+      <!-- <dt>User</dt>
       <dd>
         <% if @purchase.user.present? %>
           <a href="/users/<%= @purchase.user_id %>">
             <%= @purchase.user.email %>
           </a>
         <% end %>
-      </dd>
+      </dd> -->
 
     </dl>
 

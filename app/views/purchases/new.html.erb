@@ -21,10 +21,10 @@
       <!-- Label and input for purchase_name -->
       <div class="form-group">
         <label for="purchase_name" class="control-label">
-          Purchase name
+          Purchase Name
         </label>
 
-        <input type="text" id="purchase_name" name="purchase_name" placeholder="Purchase name" class="form-control" value="<%= @purchase.purchase_name %>">
+        <input type="text" id="purchase_name" name="purchase_name" placeholder="Purchase Name" class="form-control" value="<%= @purchase.purchase_name %>">
       </div>
 
       <!-- Label and input for category_id -->
@@ -40,12 +40,11 @@
       <!-- Label and input for purchase_date -->
       <div class="form-group">
         <label for="purchase_date" class="control-label">
-          Purchase date
+          Purchase Date
         </label>
 
 
 
-      <div class="container">
     <div class="row">
         <div class='col-sm-6'>
             <div class="form-group">
@@ -65,26 +64,29 @@
             });
         </script>
     </div>
-</div>
 
+    <!-- Label and input for notes -->
+    <div class="form-group">
+      <label for="notes" class="control-label">
+        Notes
+      </label>
 
-      <!-- Label and input for notes -->
-      <div class="form-group">
-        <label for="notes" class="control-label">
-          Notes
-        </label>
+      <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @purchase.notes %></textarea>
+    </div>
 
-        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @purchase.notes %></textarea>
-      </div>
+    <!-- Label and input for user id -->
+    <div class="form-group">
+      <label for="user_id" class="control-label">
+      </label>
 
-      <!-- Label and input for user_id -->
-      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+      <input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>" class="form-control">
+    </div>
 
-      <button class="btn btn-success">
-        Create Purchase
-      </button>
-      or
-      <a href="/purchases">Cancel</a>
+    <button class="btn btn-success">
+      Add Purchase
+    </button>
+    or
+    <a href="/purchases/<%= @purchase.id %>">Cancel</a>
     </form>
-  </div>
-</div>
+    </div>
+    </div>
