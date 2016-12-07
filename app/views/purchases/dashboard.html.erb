@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>
+    Dashboard
+    <p class="lead">Upcoming expirations</p>
+  </h1>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Purchase Name</th>
+        <th>Category</th>
+        <th>Purchase Date</th>
+        <!-- <th>Notes</th> -->
+        <th>State</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.purchase_name %></td>
+        <td>
+          <% if purchase.category.present? %>
+            <a href="/categories/<%= purchase.category.id %>">
+              <%= purchase.category.category.gsub('_', ' ').capitalize %>
+            </a>
+          <% end %>
+        </td>
+        <td><%= purchase.purchase_date %></td>
+        <!-- <td><%= purchase.notes %></td> -->
+        <td>State Name</td>
+        <td>
+          <a href="/purchases/<%= purchase.id %>" class="btn btn-primary">Show</a>
+
+          <% if current_user == purchase.user %>
+            <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_purchase/<%= purchase.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+    <%= paginate @purchases, theme: 'twitter-bootstrap-4' %>
+  </div>
+</div>

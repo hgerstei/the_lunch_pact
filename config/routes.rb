@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root :to => "states#index"
+  root :to => "purchases#dashboard"
   # Routes for the Recipe resource:
   # CREATE
   get "/recipes/new", :controller => "recipes", :action => "new"
@@ -68,6 +68,8 @@ Rails.application.routes.draw do
   # READ
   get "/purchases", :controller => "purchases", :action => "index"
   get "/purchases/:id", :controller => "purchases", :action => "show"
+  # Added for dashboard views
+  get "/dashboard", :controller => "purchases", :action => "filter"
 
   # UPDATE
   get "/purchases/:id/edit", :controller => "purchases", :action => "edit"
