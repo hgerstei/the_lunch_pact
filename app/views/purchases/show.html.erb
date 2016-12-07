@@ -12,7 +12,7 @@
       <dd>
         <% if @purchase.category.present? %>
           <a href="/categories/<%= @purchase.category_id %>">
-            <%= @purchase.category.category.capitalize %>
+            <%= @purchase.category.category.gsub('_', ' ').capitalize %>
           </a>
         <% end %>
       </dd>
