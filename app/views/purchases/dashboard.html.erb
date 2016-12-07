@@ -11,7 +11,7 @@
       <tr>
         <th>Purchase Name</th>
         <th>Category</th>
-        <th>Purchase Date</th>
+        <!-- <th>Purchase Date</th> -->
         <!-- <th>Notes</th> -->
         <th>State</th>
         <th>Actions</th>
@@ -27,15 +27,15 @@
             </a>
           <% end %>
         </td>
-        <td><%= purchase.purchase_date %></td>
+        <!-- <td><%= purchase.purchase_date %></td> -->
         <!-- <td><%= purchase.notes %></td> -->
         <td>State Name</td>
         <td>
-          <a href="/purchases/<%= purchase.id %>" class="btn btn-primary">Show</a>
+          <a href="/purchases/<%= purchase.id %>" class="btn btn-link">Show</a>
 
           <% if current_user == purchase.user %>
-            <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-warning">Edit</a>
-            <a href="/delete_purchase/<%= purchase.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+            <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-link">Edit</a>
+            <a href="/delete_purchase/<%= purchase.id %>" class="btn btn-link" rel="nofollow">Delete</a>
           <% end %>
         </td>
       </tr>

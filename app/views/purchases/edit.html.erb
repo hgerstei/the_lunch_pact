@@ -48,7 +48,7 @@
           <div class="form-group">
             <div class='input-group date' id='datetimepicker1'>
               <!-- <input type='text' class="form-control" /> -->
-              <input type="text" id="purchase_date" name="purchase_date" placeholder="<%= Time.now.strftime("%m/%d/%Y") %>" class="form-control" value="<%= @purchase.purchase_date %>">
+              <input type="text" id="purchase_date" name="purchase_date" placeholder="<%= Time.now.strftime("%m/%d/%Y") %>" class="form-control">
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -83,7 +83,7 @@
       </div>
 
 
-      <button class="btn btn-warning">
+      <button class="btn btn-primary">
         Update Purchase
       </button>
       or

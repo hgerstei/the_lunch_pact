@@ -25,7 +25,7 @@ class PurchasesController < ApplicationController
   def filter
     @q = current_user.purchases.ransack(params[:q])
       @purchases = @q.result(:distinct => true).includes(:category, :user).page(params[:page]).per(10)
-
+      
     render("purchases/dashboard.html.erb")
   end
 
