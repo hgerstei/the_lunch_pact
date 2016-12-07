@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # Added to fix Sprockets error
 gem 'jquery-ui-rails', '~> 4.2.1'
 
-# Added gem for time
+# Additional date and time gem (chronic)
 gem 'chronic'
 
 # Use Capistrano for deployment
