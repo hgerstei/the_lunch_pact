@@ -3,7 +3,7 @@
     Purchases
     <a href="/purchases/new" class="btn btn-lg btn-success">New Purchase</a>
   </h1>
-</div><div class="row mb-1">
+<!-- </div><div class="row mb-1">
   <div class="col-md-12">
     <%= search_form_for @q, :class => "collapse", :id => "purchases_filters" do |f| %>
       <p class="lead">Narrow results:</p>
@@ -99,8 +99,8 @@
       </script>
 
         <div class="form-group">
-      <%= f.label :category_type_cont, "Category type contains" %>
-      <%= f.text_field :category_type_cont, :class => "form-control", :placeholder => "Category type contains" %>
+      <%= f.label :category_category_cont, "Category contains" %>
+      <%= f.text_field :category_category_cont, :class => "form-control", :placeholder => "Category contains" %>
     </div>
 
 <div class="form-group">
@@ -116,7 +116,7 @@
       Show Filters
     </a>
   </div>
-</div>
+</div> -->
 
 <div class="row">
   <div class="col-md-12">
@@ -151,7 +151,7 @@
         </td>
         <td>
           <a href="/purchases/<%= purchase.id %>" class="btn btn-primary">Show</a>
-          
+
           <% if current_user == purchase.user %>
             <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-warning">Edit</a>
             <a href="/delete_purchase/<%= purchase.id %>" class="btn btn-danger" rel="nofollow">Delete</a>

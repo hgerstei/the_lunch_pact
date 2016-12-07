@@ -51,6 +51,12 @@ class PurchasesController < ApplicationController
     else
       render("purchases/new.html.erb")
     end
+
+    # For Chronic functionality
+    # @event = Event.new
+    # @event.title = params[:title]
+    # @event.held_on = Chronic.parse(params[:held_on])
+    # @event.save
   end
 
   def edit
