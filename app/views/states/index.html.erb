@@ -1,9 +1,10 @@
 <div class="page-header">
   <h1>
-    States
-    <a href="/states/new" class="btn btn-lg btn-success">New State</a>
+    Expirations
+    <!-- <a href="/states/new" class="btn btn-lg btn-success">New State</a> -->
   </h1>
-</div><div class="row mb-1">
+</div>
+<!-- <div class="row mb-1">
   <div class="col-md-12">
     <%= search_form_for @q, :class => "collapse", :id => "states_filters" do |f| %>
       <p class="lead">Narrow results:</p>
@@ -97,8 +98,8 @@
       </script>
 
         <div class="form-group">
-      <%= f.label :category_type_cont, "Category type contains" %>
-      <%= f.text_field :category_type_cont, :class => "form-control", :placeholder => "Category type contains" %>
+      <%= f.label :category_category_cont, "Category category contains" %>
+      <%= f.text_field :category_category_cont, :class => "form-control", :placeholder => "Category category contains" %>
     </div>
 
 <div class="form-group">
@@ -119,7 +120,7 @@
       Show Filters
     </a>
   </div>
-</div>
+</div> -->
 
 <div class="row">
   <div class="col-md-12">
@@ -138,7 +139,7 @@
         <td>
           <% if state.category.present? %>
             <a href="/categories/<%= state.category.id %>">
-              <%= state.category.type %>
+              <%= state.category.category %>
             </a>
           <% end %>
         </td>
