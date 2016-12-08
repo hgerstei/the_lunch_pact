@@ -136,7 +136,7 @@
         <th>Sub-categories</th>
         <!-- <th>Lifespan (Days)</th> -->
         <th>Refrigerate?</th>
-        <!-- <th>Storage Suggestions</th> -->
+        <th>Storage Suggestions</th>
         <th>Action</th>
       </tr>
 
@@ -147,10 +147,10 @@
         <td><%= category.sub_categories.to_s.gsub('\\', '') %></td>
         <!-- <td><%= category.lifespan %></td> -->
         <td><%= category.refrigeration %></td>
-        <!-- <td><%= category.storage_suggestions.to_s.gsub('\\', '') %></td> -->
+        <td><%= category.storage_suggestions.to_s.gsub('\\', '') %></td>
         <td>
-          <a href="/purchases/new" class="btn btn-primary">Add Purchase</a>
-          <!-- <a href="/categories/<%= category.id %>" class="btn btn-primary">Show</a> -->
+          <!-- <a href="/purchases/new" class="btn btn-primary">Add Purchase</a> -->
+          <a href="/categories/<%= category.id %>" class="btn btn-primary">Add Purchase</a>
           <!-- <a href="/categories/<%= category.id %>/edit" class="btn btn-warning">Edit</a> -->
           <!-- <a href="/delete_category/<%= category.id %>" class="btn btn-danger" rel="nofollow">Delete</a> -->
         </td>

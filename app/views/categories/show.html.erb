@@ -1,27 +1,27 @@
 <div class="page-header">
-  <h3>Category #<%= @category.id %></h3>
+  <h3><img src="<%= @category.photo_url %>" height="60"><%= @category.category.capitalize %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Category</dt>
-      <dd><%= @category.category %></dd>
+      <!-- <dt>Category</dt>
+      <dd><%= @category.category.capitalize %></dd> -->
 
-      <dt>Sub categories</dt>
+      <dt>Sub-categories</dt>
       <dd><%= @category.sub_categories %></dd>
 
-      <dt>Photo url</dt>
-      <dd><%= @category.photo_url %></dd>
+      <!-- <dt>Photo url</dt>
+      <dd><img src="<%= @category.photo_url %>"></dd> -->
 
-      <dt>Lifespan</dt>
+      <dt>Avg. Lifespan (Days)</dt>
       <dd><%= @category.lifespan %></dd>
 
-      <dt>Refrigeration</dt>
+      <dt>Refrigerate?</dt>
       <dd><%= @category.refrigeration %></dd>
 
       <dt>Storage suggestions</dt>
-      <dd><%= @category.storage_suggestions %></dd>
+      <dd><%= @category.storage_suggestions.gsub('"', ' ') %></dd>
 
     </dl>
 
@@ -29,12 +29,12 @@
       <a href="/categories" class="btn btn-primary">
         Back
       </a>
-      <a href="/categories/<%= @category.id %>/edit" class="btn btn-warning">
+      <!-- <a href="/categories/<%= @category.id %>/edit" class="btn btn-warning">
         Edit
       </a>
       <a href="/delete_category/<%= @category.id %>" class="btn btn-danger" rel="nofollow">
         Delete
-      </a>
+      </a> -->
     </div>
   </div>
 </div>
@@ -45,10 +45,10 @@
   <div class="col-md-12">
     <ul class="list-group">
       <li class="list-group-item list-group-item-info">
-        Purchases
+        Add Purchase
       </li>
 
-      <% @category.purchases.each do |purchase| %>
+      <!-- <% @category.purchases.each do |purchase| %>
         <li class="list-group-item">
           <a href="/purchases/<%= purchase.id %>">
             <%= purchase.purchase_name %>
@@ -65,7 +65,7 @@
             </a>
           </div>
         </li>
-      <% end %>
+      <% end %> -->
 
       <li class="list-group-item">
         <form action="/create_purchase" method="post">
