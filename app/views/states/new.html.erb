@@ -27,41 +27,15 @@
         <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :type, @state.category_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for stage1 -->
+      <!-- Label and input for stage -->
       <div class="form-group">
-        <label for="stage1" class="control-label">
-          Stage1
+        <label for="stage" class="control-label">
+          Stage
         </label>
 
-        <input type="text" id="stage1" name="stage1" placeholder="Stage1" class="form-control" value="<%= @state.stage1 %>">
+        <input type="text" id="stage" name="stage" placeholder="Stage" class="form-control" value="<%= @state.stage %>">
       </div>
 
-      <!-- Label and input for stage2 -->
-      <div class="form-group">
-        <label for="stage2" class="control-label">
-          Stage2
-        </label>
-
-        <input type="text" id="stage2" name="stage2" placeholder="Stage2" class="form-control" value="<%= @state.stage2 %>">
-      </div>
-
-      <!-- Label and input for stage3 -->
-      <div class="form-group">
-        <label for="stage3" class="control-label">
-          Stage3
-        </label>
-
-        <input type="text" id="stage3" name="stage3" placeholder="Stage3" class="form-control" value="<%= @state.stage3 %>">
-      </div>
-
-      <!-- Label and input for stage4 -->
-      <div class="form-group">
-        <label for="stage4" class="control-label">
-          Stage4
-        </label>
-
-        <input type="text" id="stage4" name="stage4" placeholder="Stage4" class="form-control" value="<%= @state.stage4 %>">
-      </div>
 
       <button class="btn btn-success">
         Create State

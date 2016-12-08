@@ -24,10 +24,7 @@ class StatesController < ApplicationController
     @state = State.new
 
     @state.category_id = params[:category_id]
-    @state.stage1 = params[:stage1]
-    @state.stage2 = params[:stage2]
-    @state.stage3 = params[:stage3]
-    @state.stage4 = params[:stage4]
+    @state.stage = params[:stage]
 
     save_status = @state.save
 
@@ -55,10 +52,7 @@ class StatesController < ApplicationController
     @state = State.find(params[:id])
 
     @state.category_id = params[:category_id]
-    @state.stage1 = params[:stage1]
-    @state.stage2 = params[:stage2]
-    @state.stage3 = params[:stage3]
-    @state.stage4 = params[:stage4]
+    @state.stage = params[:stage]
 
     save_status = @state.save
 
