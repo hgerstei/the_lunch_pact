@@ -123,7 +123,7 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Purchase Name</th>
+        <th>Item</th>
         <th>Category</th>
         <th>Purchase Date</th>
         <th>Notes</th>
@@ -133,7 +133,10 @@
 
       <% @purchases.each do |purchase| %>
       <tr>
-        <td><%= purchase.purchase_name %></td>
+        <td>
+          <img src="<%= purchase.category.photo_url + "  " %>" height="45">
+          <%= purchase.purchase_name %>
+        </td>
         <td>
           <% if purchase.category.present? %>
             <a href="/categories/<%= purchase.category.id %>">

@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3><%= @purchase.purchase_name %></h3>
+  <h3><img src="<%= @purchase.category.photo_url %>" height="60"><%= "  " + @purchase.purchase_name %></h3>
 </div>
 
 <div class="row">
@@ -11,7 +11,7 @@
       <dt>Category</dt>
       <dd>
         <% if @purchase.category.present? %>
-          <a href="/categories/<%= @purchase.category_id %>">
+          <!-- <a href="/categories/<%= @purchase.category_id %>"> -->
             <%= @purchase.category.category.gsub('_', ' ').capitalize %>
           </a>
         <% end %>

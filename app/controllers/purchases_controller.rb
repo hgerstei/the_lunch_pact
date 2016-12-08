@@ -23,7 +23,7 @@ class PurchasesController < ApplicationController
   end
 
   def filter
-    
+    @today = Date.today.strftime("%m/%d/%Y").to_i
     render("purchases/dashboard.html.erb")
   end
 
