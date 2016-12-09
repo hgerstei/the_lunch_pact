@@ -43,11 +43,12 @@
           <!-- <li><a href="/recipes">Recipes</a></li> -->
           <!-- <li><a href="/recommendations">Recommendations</a></li> -->
           <!-- <li><a href="/users">Users</a></li> -->
-          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/dashboard">Dashboard <span class="badge">3</span></a></li>
           <li><a href="/purchases">My Purchases</a></li>
           <li><a href="/categories">Categories</a></li>
           <!-- <li><a href="/rails/info">Sitemap</a></li> -->
         </ul>
+
 
 <!-- Sign in or out links updated based on whether there's a current user -->
         <ul class="nav navbar-nav navbar-right">
@@ -64,9 +65,12 @@
           <li><a href="/users/sign_in">Sign In</a></li>
           <% end %>
         </ul>
+
+
       </div><!-- /.navbar-collapse -->
     </div>
   </nav>
+
 
   <div class="container">
     <% if notice.present? %>
