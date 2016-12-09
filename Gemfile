@@ -40,7 +40,6 @@ gem 'chronic'
 
 # Added for sortable dashboard table
 gem 'sortable-table', '~> 0.1.1'
-gem 'jquery-turbolinks'
 
 # Added gem for chartkick
 gem "chartkick"
