@@ -11,7 +11,7 @@ class Recommendation < ApplicationRecord
 
   # Validations
 
-  validates :recommendation, :presence => true
+  #temporarily disabled validates :recommendation, :presence => true
 
   validates :category_id, :presence => true
 
