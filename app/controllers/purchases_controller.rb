@@ -24,7 +24,6 @@ class PurchasesController < ApplicationController
 
   def filter
     @today = Date.today.strftime("%m/%d/%Y").to_i
-    # @purchases = Purchase.all
     @recommendations = Recommendation.all
     render("purchases/dashboard.html.erb")
   end

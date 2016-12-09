@@ -49,16 +49,25 @@
 
         <!-- Logic for recommendations -->
         <% if purchase.category.stage4 <= Date.today - purchase.purchase_date %>
-        <td><%= @recommendations.find_by(:stage => :stage4) %></td>
+        <td><%= "Stage 4 Recommendation" %></td>
         <% elsif purchase.category.stage3 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage4 %>
-        <td><%= "Stage 3 Recipe" %></td>
+        <td><%= "Stage 3 Recommendation" %></td>
         <% elsif purchase.category.stage2 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage3 %>
-        <td><%= "Stage 2 Recipe" %></td>
+        <td><%= "Stage 2 Recommendation" %></td>
         <% elsif purchase.category.stage1 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage2 %>
-        <td><%= "Stage 1 Recipe" %></td>
+        <td><%= "Stage 1 Recommendation" %></td>
         <% end %>
 
-        <td>Recipe to be added</td>
+        <!-- Logic for recipes -->
+        <% if purchase.category.stage4 <= Date.today - purchase.purchase_date %>
+        <td><%= "Stage 4 Recipe URL" %></td>
+        <% elsif purchase.category.stage3 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage4 %>
+        <td><%= "Stage 3 Recipe URL" %></td>
+        <% elsif purchase.category.stage2 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage3 %>
+        <td><%= "Stage 2 Recipe URL" %></td>
+        <% elsif purchase.category.stage1 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage2 %>
+        <td><%= "Stage 1 Recipe URL" %></td>
+        <% end %>
 
         <td>
           <a href="/purchases/<%= purchase.id %>" class="btn btn-link">Show</a>
