@@ -45,6 +45,8 @@
         <td><span class="label label-success">Stage 2</span></td>
         <% elsif 0 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < 1.67 %>
         <td><span class="label label-info">Stage 1</span></td>
+        <% else %>
+        <td><span class="label label-default">Not Available</span></td>
         <% end %>
 
         <td>Recommendation to be added</td>

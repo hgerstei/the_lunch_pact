@@ -33,7 +33,7 @@
           Category
         </label>
 
-        <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :category, @purchase.category_id), :class => "form-control") %>
+        <%= select_tag(:category_id, options_from_collection_for_select(Category.all.order(:category), :id, :category, @purchase.category_id), :class => "form-control") %>
       </div>
 
 
