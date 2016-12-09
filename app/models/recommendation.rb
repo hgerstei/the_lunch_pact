@@ -17,4 +17,5 @@ class Recommendation < ApplicationRecord
 
   validates :stage, :presence => true
 
+
 end

@@ -146,7 +146,12 @@
         <td><img src="<%= category.photo_url %>" height="45"><%= "  " + category.category.gsub('_', ' ').camelize %></td>
         <td><%= category.sub_categories.to_s.gsub('\\', '') %></td>
         <!-- <td><%= category.lifespan %></td> -->
-        <td><%= category.refrigeration %></td>
+        <% if category.refrigeration == true %>
+        <td>Yes</td>
+        <% else %>
+        <td>No</td>
+        <% end %>
+        <!-- <td><%= category.refrigeration %></td> -->
         <td><%= category.storage_suggestions.to_s.gsub('\\', '') %></td>
         <td>
           <!-- <a href="/purchases/new" class="btn btn-primary">Add Purchase</a> -->

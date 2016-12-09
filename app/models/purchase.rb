@@ -9,6 +9,10 @@ class Purchase < ApplicationRecord
 
   # Indirect associations
 
+  has_many :recommendations,
+  :through => :category_id,
+  :source => :recommendations
+
   # Validations
 
   validates :category_id, :presence => true
@@ -20,5 +24,24 @@ class Purchase < ApplicationRecord
   validates :purchase_name, :presence => true
 
   validates :user_id, :presence => true
+
+  
+
+  def recommendation_stage4
+    Recommendation.find_by(stage:'stage4').recommendation
+  end
+
+  def recommendation_stage3
+    Recommendation.find_by(stage:'stage3').recommendation
+  end
+
+  def recommendation_stage2
+    Recommendation.find_by(stage:'stage2').recommendation
+  end
+
+  def recommendation_stage1
+    Recommendation.find_by(stage:'stage1').recommendation
+  end
+
 
 end

@@ -50,13 +50,13 @@
 
         <!-- Logic for recommendations -->
         <% if purchase.category.stage4 <= Date.today - purchase.purchase_date %>
-        <td><%= "Stage 4 Recommendation" %></td>
+        <td><%= purchase.category.recommendation %></td>
         <% elsif purchase.category.stage3 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage4 %>
-        <td><%= "Stage 3 Recommendation" %></td>
+        <td><%= purchase.recommendation_stage3 %></td>
         <% elsif purchase.category.stage2 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage3 %>
-        <td><%= "Stage 2 Recommendation" %></td>
+        <td><%= purchase.recommendation_stage2 %></td>
         <% elsif purchase.category.stage1 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage2 %>
-        <td><%= "Stage 1 Recommendation" %></td>
+        <td><%= purchase.recommendation_stage1 %></td>
         <% end %>
 
         <!-- Logic for recipes -->
