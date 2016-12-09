@@ -14,12 +14,8 @@ class State < ApplicationRecord
 
   validates :category_id, :presence => true
 
-  validates :stage1, :presence => true
+  validates :stage_name, :presence => true
 
-  validates :stage2, :presence => true
-
-  validates :stage3, :presence => true
-
-  validates :stage4, :presence => true
+  validates :stage, :presence => true
 
 end
