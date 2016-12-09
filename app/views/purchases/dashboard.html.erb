@@ -16,7 +16,7 @@
         <th>Status</th>
         <th>Recommendation</th>
         <th>Recipe</th>
-        <th>Actions</th>
+        <th></th>
       </tr>
 
       <% Purchase.all.each do |purchase| %>
@@ -24,13 +24,14 @@
         <td>
           <img src="<%= purchase.category.photo_url + "  " %>" height="45">
           <a href="/purchases/<%= purchase.id %>">
-          <%= purchase.purchase_name %>
+          <%= purchase.purchase_name %></a>
         </td>
         <td>
           <% if purchase.category.present? %>
             <!-- <a href="/categories/<%= purchase.category.id %>"> -->
-              <%= purchase.category.category.gsub('_', ' ').capitalize %>
-            </a>
+              <a href="/categories/<%= purchase.category.id %>">
+                <%= purchase.category.category.gsub('_', ' ').capitalize %>
+              </a>
           <% end %>
         </td>
         <!-- <td><%= purchase.purchase_date %></td> -->
@@ -60,21 +61,29 @@
 
         <!-- Logic for recipes -->
         <% if purchase.category.stage4 <= Date.today - purchase.purchase_date %>
-        <td><%= "Stage 4 Recipe URL" %></td>
+        <td><%= "Stage 4 Recipe" %></td>
         <% elsif purchase.category.stage3 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage4 %>
-        <td><%= "Stage 3 Recipe URL" %></td>
+        <td><%= "Stage 3 Recipe" %></td>
         <% elsif purchase.category.stage2 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage3 %>
-        <td><%= "Stage 2 Recipe URL" %></td>
+        <td><%= "Stage 2 Recipe" %></td>
         <% elsif purchase.category.stage1 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage2 %>
-        <td><%= "Stage 1 Recipe URL" %></td>
+        <td><%= "Stage 1 Recipe" %></td>
         <% end %>
 
         <td>
-          <a href="/purchases/<%= purchase.id %>" class="btn btn-link">Show</a>
+          <div class="btn-group btn-group-sm">
+              <a href="/purchases/<%= purchase.id %>" class="btn btn-primary">
+                <i class="fa fa-search-plus"></i>
+              </a>
+              <% if current_user == purchase.user %>
+              <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a href="/delete_purchase/<%= purchase.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
 
-          <% if current_user == purchase.user %>
-            <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-link">Edit</a>
-            <a href="/delete_purchase/<%= purchase.id %>" class="btn btn-link" rel="nofollow">Delete</a>
           <% end %>
         </td>
       </tr>

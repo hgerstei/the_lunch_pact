@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
     Purchases
-    <a href="/purchases/new" class="btn btn-primary">Add Item</a>
+    <a href="/purchases/new" class="btn btn-primary">Add Purchase</a>
     <p class="lead">Fruits and veggies in my kitchen</p>
   </h1>
 <!-- </div><div class="row mb-1">
@@ -128,7 +128,7 @@
         <th>Purchase Date</th>
         <th>Notes</th>
         <!-- <th>User</th> -->
-        <th>Actions</th>
+        <th></th>
       </tr>
 
       <% @purchases.each do |purchase| %>
@@ -154,11 +154,19 @@
           <% end %>
         </td> -->
         <td>
-          <a href="/purchases/<%= purchase.id %>" class="btn btn-link">Show</a>
+          <div class="btn-group btn-group-sm">
+              <a href="/purchases/<%= purchase.id %>" class="btn btn-primary">
+                <i class="fa fa-search-plus"></i>
+              </a>
+              <% if current_user == purchase.user %>
+              <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a href="/delete_purchase/<%= purchase.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
 
-          <% if current_user == purchase.user %>
-            <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-link">Edit</a>
-            <a href="/delete_purchase/<%= purchase.id %>" class="btn btn-link" rel="nofollow">Delete</a>
           <% end %>
         </td>
       </tr>

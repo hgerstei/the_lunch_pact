@@ -137,7 +137,7 @@
         <!-- <th>Lifespan (Days)</th> -->
         <th>Refrigerate?</th>
         <th>Storage Suggestions</th>
-        <th>Action</th>
+        <th></th>
       </tr>
 
       <% @categories.each do |category| %>
@@ -150,7 +150,7 @@
         <td><%= category.storage_suggestions.to_s.gsub('\\', '') %></td>
         <td>
           <!-- <a href="/purchases/new" class="btn btn-primary">Add Purchase</a> -->
-          <a href="/categories/<%= category.id %>" class="btn btn-primary">Add Purchase</a>
+          <a href="/categories/<%= category.id %>" class="btn btn-primary btn-sm">Add Purchase</a>
           <!-- <a href="/categories/<%= category.id %>/edit" class="btn btn-warning">Edit</a> -->
           <!-- <a href="/delete_category/<%= category.id %>" class="btn btn-danger" rel="nofollow">Delete</a> -->
         </td>

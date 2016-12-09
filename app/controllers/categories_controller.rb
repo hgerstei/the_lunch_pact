@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
   def index
     @q = Category.ransack(params[:q])
-    @categories = @q.result(:distinct => true).includes(:purchases, :states, :users, :recommendations, :recipes).page(params[:page]).per(10)
+    @categories = @q.result(:distinct => true).includes(:purchases, :users).page(params[:page]).per(10)
 
     render("categories/index.html.erb")
   end
 
   def show
-    @state = State.new
+    # @state = State.new
     @purchase = Purchase.new
     @category = Category.find(params[:id])
 
