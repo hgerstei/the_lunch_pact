@@ -38,6 +38,12 @@ gem 'jquery-ui-rails', '~> 4.2.1'
 # Additional date and time gem (chronic)
 gem 'chronic'
 
+# Added for sortable dashboard table
+gem 'sortable-table', '~> 0.1.1'
+
+# Added gem for chartkick
+gem "chartkick"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
