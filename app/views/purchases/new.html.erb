@@ -40,30 +40,11 @@
       <!-- Label and input for purchase_date -->
       <div class="form-group">
         <label for="purchase_date" class="control-label">
-          Purchase Date
+          Purchase date
         </label>
 
-        <div class="row">
-          <div class='col-sm-6'>
-            <div class="form-group">
-              <div class='input-group date' id='datetimepicker1'>
-                <input type='text' class="form-control" name="purchase_date" id="purchase_date" placeholder="<%= Date.today.strftime("%m/%d/%y") %>">
-                <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(function () {
-            $('#datetimepicker1').datetimepicker({
-              viewMode: 'days',
-              format: 'MM/DD/YYYY'
-            });
-          });
-          </script>
-        </div>
-        </div>
+        <input type="date" id="purchase_date" name="purchase_date" placeholder="Purchase date" class="form-control" value="">
+      </div>
 
     <!-- Label and input for notes -->
     <div class="form-group">
