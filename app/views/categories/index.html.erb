@@ -147,9 +147,9 @@
         <td><%= category.sub_categories.to_s.gsub('\\', '') %></td>
         <!-- <td><%= category.lifespan %></td> -->
         <% if category.refrigeration == true %>
-        <td>Yes</td>
+        <td><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></td>
         <% else %>
-        <td>No</td>
+        <td></td>
         <% end %>
         <!-- <td><%= category.refrigeration %></td> -->
         <td><%= category.storage_suggestions.to_s.gsub('\\', '') %></td>
