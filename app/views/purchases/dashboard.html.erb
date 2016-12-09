@@ -37,16 +37,14 @@
         <!-- <td><%= purchase.notes %></td> -->
 
         <!-- Logic for states -->
-        <% if 5 <= Date.today - purchase.purchase_date %>
+        <% if purchase.category.stage4 <= Date.today - purchase.purchase_date %>
         <td><span class="label label-danger">Stage 4</span></td>
-        <% elsif 3.33 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < 5 %>
+        <% elsif purchase.category.stage3 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage4 %>
         <td><span class="label label-warning">Stage 3</span></td>
-        <% elsif 1.67 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < 3.33 %>
+        <% elsif purchase.category.stage2 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage3 %>
         <td><span class="label label-success">Stage 2</span></td>
-        <% elsif 0 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < 1.67 %>
+        <% elsif purchase.category.stage1 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage2 %>
         <td><span class="label label-info">Stage 1</span></td>
-        <% else %>
-        <td><span class="label label-default">Not Available</span></td>
         <% end %>
 
         <td>Recommendation to be added</td>
