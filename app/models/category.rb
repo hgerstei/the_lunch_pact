@@ -1,8 +1,8 @@
 class Category < ApplicationRecord
   # Direct associations
 
-  has_many   :states,
-             :dependent => :destroy
+  # has_many   :states,
+  #            :dependent => :destroy
 
   has_many   :purchases,
              :dependent => :destroy
@@ -10,12 +10,14 @@ class Category < ApplicationRecord
   # Indirect associations
 
   has_many   :recipes,
-             :through => :states,
-             :source => :recipes
+             :dependent => :destroy
+            #  :through => :states,
+            #  :source => :recipes
 
   has_many   :recommendations,
-             :through => :states,
-             :source => :recommendations
+             :dependent => :destroy
+            #  :through => :states,
+            #  :source => :recommendations
 
   has_many   :users,
              :through => :purchases,

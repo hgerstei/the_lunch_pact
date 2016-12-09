@@ -47,7 +47,16 @@
         <td><span class="label label-info">Stage 1</span></td>
         <% end %>
 
-        <td>Recommendation to be added</td>
+        <!-- Logic for recommendations -->
+        <% if purchase.category.stage4 <= Date.today - purchase.purchase_date %>
+        <td><%= @recommendations.find_by(:stage => :stage4) %></td>
+        <% elsif purchase.category.stage3 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage4 %>
+        <td><%= "Stage 3 Recipe" %></td>
+        <% elsif purchase.category.stage2 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage3 %>
+        <td><%= "Stage 2 Recipe" %></td>
+        <% elsif purchase.category.stage1 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage2 %>
+        <td><%= "Stage 1 Recipe" %></td>
+        <% end %>
 
         <td>Recipe to be added</td>
 
