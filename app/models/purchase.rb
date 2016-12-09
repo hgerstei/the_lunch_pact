@@ -4,14 +4,12 @@ class Purchase < ApplicationRecord
   belongs_to :user,
              :counter_cache => true
 
-  belongs_to :category,
-             :counter_cache => true
+  belongs_to :category
 
   # Indirect associations
 
-  has_many :recommendations,
-  :through => :category_id,
-  :source => :recommendations
+  # has_many :recommendations,
+  # :through => :category
 
   # Validations
 
@@ -25,22 +23,24 @@ class Purchase < ApplicationRecord
 
   validates :user_id, :presence => true
 
-  
-
-  def recommendation_stage4
-    Recommendation.find_by(stage:'stage4').recommendation
+  def stage
+    if category.stage4 <= Date.today - purchase_date
+        'stage4'
+    elsif category.stage3 <= Date.today - purchase_date && Date.today - purchase_date < category.stage4
+        'stage3'
+    elsif category.stage2 <= Date.today - purchase_date && Date.today - purchase_date < category.stage3
+        'stage2'
+    elsif category.stage1 <= Date.today - purchase_date && Date.today - purchase_date < category.stage2
+        'stage1'
+    end
   end
 
-  def recommendation_stage3
-    Recommendation.find_by(stage:'stage3').recommendation
+  def recommendation
+    recommendations.find_by(stage: stage)
   end
 
-  def recommendation_stage2
-    Recommendation.find_by(stage:'stage2').recommendation
-  end
-
-  def recommendation_stage1
-    Recommendation.find_by(stage:'stage1').recommendation
+  def recommendations
+    category.recommendations
   end
 
 
