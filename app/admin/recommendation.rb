@@ -1,6 +1,6 @@
 ActiveAdmin.register Recommendation do
 
- permit_params :recommendation, :state_id
+ permit_params :recommendation, :category_id, :stage
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

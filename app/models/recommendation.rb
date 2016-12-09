@@ -1,18 +1,20 @@
 class Recommendation < ApplicationRecord
   # Direct associations
 
-  belongs_to :state
+  belongs_to :category
 
   # Indirect associations
 
-  has_one    :category,
-             :through => :state,
-             :source => :category
+  # has_one    :category,
+  #            :through => :state,
+  #            :source => :category
 
   # Validations
 
   validates :recommendation, :presence => true
 
-  validates :state_id, :presence => true
+  validates :category_id, :presence => true
+
+  validates :stage, :presence => true
 
 end
