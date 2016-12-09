@@ -1,6 +1,6 @@
 ActiveAdmin.register State do
 
- permit_params :category_id, :stage1, :stage2, :stage3, :stage4
+ permit_params :category_id, :stage, :stage_name
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
