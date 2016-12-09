@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root :to => "purchases#dashboard"
+  root :to => "purchases#index"
   # Routes for the Recipe resource:
   # CREATE
   get "/recipes/new", :controller => "recipes", :action => "new"
