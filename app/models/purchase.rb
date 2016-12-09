@@ -1,5 +1,6 @@
 class Purchase < ApplicationRecord
-  # Direct associations
+
+# Direct associations
 
   belongs_to :user,
              :counter_cache => true

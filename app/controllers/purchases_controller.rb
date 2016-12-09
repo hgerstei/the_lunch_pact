@@ -26,6 +26,7 @@ class PurchasesController < ApplicationController
     @today = Date.today.strftime("%m/%d/%Y").to_i
     @recommendations = Recommendation.all
     render("purchases/dashboard.html.erb")
+
   end
 
   def new
