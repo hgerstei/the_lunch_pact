@@ -15,7 +15,7 @@
         <!-- <th>Notes</th> -->
         <th>Status</th>
         <th>Recommendation</th>
-        <th>Recipe</th>
+        <!-- <th>Recipe</th> -->
         <th></th>
       </tr>
 
@@ -49,17 +49,9 @@
         <% end %>
 
         <!-- Logic for recommendations -->
-        <% if purchase.category.stage4 <= Date.today - purchase.purchase_date %>
-        <td><%= purchase.category.recommendation %></td>
-        <% elsif purchase.category.stage3 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage4 %>
-        <td><%= purchase.recommendation_stage3 %></td>
-        <% elsif purchase.category.stage2 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage3 %>
-        <td><%= purchase.recommendation_stage2 %></td>
-        <% elsif purchase.category.stage1 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage2 %>
-        <td><%= purchase.recommendation_stage1 %></td>
-        <% end %>
+        <td><%= purchase.recommendation.recommendation %></td>
 
-        <!-- Logic for recipes -->
+        <!-- Logic for recipes
         <% if purchase.category.stage4 <= Date.today - purchase.purchase_date %>
         <td><%= "Stage 4 Recipe" %></td>
         <% elsif purchase.category.stage3 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage4 %>
@@ -68,7 +60,7 @@
         <td><%= "Stage 2 Recipe" %></td>
         <% elsif purchase.category.stage1 <= Date.today - purchase.purchase_date && Date.today - purchase.purchase_date < purchase.category.stage2 %>
         <td><%= "Stage 1 Recipe" %></td>
-        <% end %>
+        <% end %> -->
 
         <td>
           <div class="btn-group btn-group-sm">
